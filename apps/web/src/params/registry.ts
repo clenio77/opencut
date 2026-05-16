@@ -4,7 +4,7 @@ import type {
 	ParamValues,
 } from "@/params";
 import { MIN_TRANSFORM_SCALE } from "@/animation/transform";
-import type { BlendMode } from "@/rendering";
+import type { BlendMode } from "@/core/primitives";
 import type {
 	ElementType,
 	TimelineElement,

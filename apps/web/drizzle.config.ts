@@ -5,6 +5,7 @@ if (process.env.NODE_ENV === "production") {
 	dotenv.config({ path: ".env.production" });
 } else {
 	dotenv.config({ path: ".env.local" });
+	dotenv.config({ path: ".env" });
 }
 
 const databaseUrl = process.env.DATABASE_URL;
@@ -13,7 +14,7 @@ if (!databaseUrl) {
 }
 
 export default {
-	schema: "./src/lib/db/schema.ts",
+	schema: "./src/db/schema.ts",
 	dialect: "postgresql",
 	migrations: {
 		table: "drizzle_migrations",

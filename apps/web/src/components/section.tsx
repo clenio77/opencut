@@ -4,6 +4,7 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import { ArrowDownIcon } from "@hugeicons/core-free-icons";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import { webEnv } from "@/env/web";
 
 const sectionExpandedCache = new Map<string, boolean>();
 const mountedSectionKeys = new Set<string>();
@@ -45,7 +46,7 @@ export function Section({
 	useEffect(() => {
 		if (!sectionKey) return;
 		if (
-			process.env.NODE_ENV !== "production" &&
+			webEnv.NODE_ENV !== "production" &&
 			mountedSectionKeys.has(sectionKey)
 		) {
 			console.error(
